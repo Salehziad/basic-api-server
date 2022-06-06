@@ -28,17 +28,18 @@ async function getOneFood(req,res){
 }
 async function updateOneFood(req,res){
     let foodId=req.params.id;
-    let updateFood=req.pody;
+    let updateFood=req.body;
     let foundFood = await FoodModel.findOne({ where: { id: foodId } });
     if (foundFood) {
 
         let updatedFood = await foundFood.update(updateFood);
-        res.status(201).json(updateFood);
+        res.status(201).json(updatedFood);
     } else {
-        // throw new Error('there is not such id');
+        throw new Error('there is not such id');
         res.status(404);
     }
 }
+
 async function deleteOneFood(req,res){
     let foodId=req.params.id;
     let food=await FoodModel.destroy({ where: { id: foodId } });

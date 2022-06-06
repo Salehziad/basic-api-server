@@ -9,7 +9,7 @@ beforeAll(async()=>{
 })
 
 describe('food web server', ()=>{
-    test.skip('Create a record using POST', async()=>{
+    test('Create a record using POST', async()=>{
         const response= await mockRequest.post('/food').send({
             FoodName: "mansaf",
             Descreption: "best food",
@@ -23,7 +23,7 @@ describe('food web server', ()=>{
         expect(response.status).toBe(200);
         expect(typeof response.body).toBe('object');
     });
-    test('Update a record using PUT', async () => {
+    it('can update a record', async () => {
         const response = await mockRequest.put('/food/1');
         expect(response.status).toBe(201);
     });

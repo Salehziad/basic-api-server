@@ -15,12 +15,12 @@ describe('logger middleware', () => {
         consoleSpy = jest.spyOn(console, 'log');
     });
 
-    test.skip('it is logging something or routes', () => {
+    test('it is logging something or routes', () => {
         logger(req, res, next);
         expect(consoleSpy).toHaveBeenCalled();
     });
 
-    test.skip('it is calling next', () => {
+    test('it is calling next', () => {
         expect(next).toHaveBeenCalled();
     });
 })

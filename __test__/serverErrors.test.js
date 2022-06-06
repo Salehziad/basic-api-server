@@ -7,11 +7,11 @@ describe('sss', () => {
 
 
 
-    test.skip('Page not found test', async () => {
+    test('Page not found test', async () => {
         const response = await request.get('/sss');
         expect(response.status).toBe(404);
     })
-    test.skip('Page not found test', async () => {
+    test('Page not found test', async () => {
         const response = await request.delete('/person/:anyName');
         expect(response.status).toBe(404);
     })
