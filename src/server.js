@@ -16,9 +16,8 @@ app.use(foodRoutes);
 app.use(clothesRoute)
 app.use(handleNotFound);
 app.use(handleServerError);
-app.get('/',(req,res)=>{
-    res.send('Welcome to our server food/clothes')
-});
+
+
 
 
 function start(PORT){
