@@ -9,7 +9,9 @@ foodRoutes.get('/food/:id',getOneFood);
 foodRoutes.put('/food/:id',updateOneFood);
 foodRoutes.delete('/food/:id',deleteOneFood);
 foodRoutes.delete('/food',deleteAllFode)
-
+foodRoutes.get('/',(req,res)=>{
+    res.send('Welcome to our server food/clothes')
+});
 async function addNewFood(req,res){
     let newFood=req.body;
     let food=await FoodModel.create(newFood);
