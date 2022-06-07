@@ -17,7 +17,7 @@
 >> - there is multible way to see result of this server by browser or thunder client . 
 >> - if u want to add feature to this server there is `test` by `jest` you can test features with it before add to main.
 >> - if you see any issue with my server fork my repo with datals and solution if you have it.
->### 2- by use online app for this server by heruku 
+>### 2- by use online app for this server by heroku 
 >> - [saleh-basic-api-server](https://saleh-basic-api-server.herokuapp.com/)
 
 
@@ -27,6 +27,9 @@
 > - this server contains `middleWar` way for write functions.
 > - this server contain  `404 error , 500 eror` handler. 
 > - this server has test for all methods you can test before use anytime :).\
+
+# heroku link
+> [saleh-basic-api-server](https://saleh-basic-api-server.herokuapp.com/)
 
 # GitHub actions link
 > - [actions link](https://github.com/Salehziad/basic-api-server/actions)
