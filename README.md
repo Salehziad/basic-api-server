@@ -29,7 +29,7 @@
 > - this server has test for all methods you can test before use anytime :).\
 
 # GitHub actions link
-> - ![actions link](https://github.com/Salehziad/basic-api-server/actions)
+> - [actions link](https://github.com/Salehziad/basic-api-server/actions)
 
 # The pull request link
-> - ![pull request](https://github.com/Salehziad/basic-api-server/pull/5)
+> - [pull request](https://github.com/Salehziad/basic-api-server/pull/5)
