@@ -3,50 +3,50 @@ const express=require('express');
 const clothesRoute=express.Router();
 const {clothesModel}=require('../models/index');
 
-clothesRoute.post('/food',addNewclothes);
-clothesRoute.get('/food',getAllclothes);
-clothesRoute.get('/food/:id',getOneclothes);
-clothesRoute.put('/food/:id',updateOneclothes);
-clothesRoute.delete('/food/:id',deleteOneclothes);
-clothesRoute.delete('/food',deleteAllclothes)
+clothesRoute.post('/clothes',addNewclothes);
+clothesRoute.get('/clothes',getAllclothes);
+clothesRoute.get('/clothes/:id',getOneclothes);
+clothesRoute.put('/clothes/:id',updateOneclothes);
+clothesRoute.delete('/clothes/:id',deleteOneclothes);
+clothesRoute.delete('/clothes',deleteAllclothes)
 
 async function addNewclothes(req,res){
-    let newFood=req.body;
-    let food=await clothesModel.create(newFood);
-    res.status(201).json(food);
+    let newclothes=req.body;
+    let clothes=await clothesModel.create(newclothes);
+    res.status(201).json(clothes);
 }
 async function getAllclothes(req,res){
     console.log("ggg");
-    let allFoods=await clothesModel.findAll();
-    res.status(200).json(allFoods) ;
+    let allclothess=await clothesModel.findAll();
+    res.status(200).json(allclothess) ;
 }
 async function getOneclothes(req,res){
-    let foodId=req.params.id;
-    let food=await clothesModel.findOne({where: {id:foodId}});
-    res.status(200).json(food);
+    let clothesId=req.params.id;
+    let clothes=await clothesModel.findOne({where: {id:clothesId}});
+    res.status(200).json(clothes);
     console.log()
 }
 async function updateOneclothes(req,res){
-    let foodId=req.params.id;
-    let updateFood=req.body;
-    let foundFood = await clothesModel.findOne({ where: { id: foodId } });
-    if (foundFood) {
+    let clothesId=req.params.id;
+    let updateclothes=req.body;
+    let foundclothes = await clothesModel.findOne({ where: { id: clothesId } });
+    if (foundclothes) {
 
-        let updatedFood = await foundFood.update(updateFood);
-        res.status(201).json(updateFood);
+        let updatedclothes = await foundclothes.update(updateclothes);
+        res.status(201).json(updateclothes);
     } else {
         // throw new Error('there is not such id');
         res.status(404);
     }
 }
 async function deleteOneclothes(req,res){
-    let foodId=req.params.id;
-    let food=await clothesModel.destroy({ where: { id: foodId } });
-    res.status(204).json(food);
+    let clothesId=req.params.id;
+    let clothes=await clothesModel.destroy({ where: { id: clothesId } });
+    res.status(204).json(clothes);
 }
 async function deleteAllclothes(req,res){
-    let food=await clothesModel.destroy({truncate:true});
-    res.status(204).json(food)
+    let clothes=await clothesModel.destroy({truncate:true});
+    res.status(204).json(clothes)
 }
 
 module.exports=clothesRoute;
